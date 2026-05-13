@@ -6,9 +6,26 @@ class Nodo {
 
 public class Ejercicio2_Binario {
     public static Nodo insertar(Nodo raiz, int valor) {
-        // TODO: Implementa tu lógica aquí
-        // Recuerda: menores a la izquierda, mayores o iguales a la derecha.
+        // Si el árbol está vacío, creamos un nuevo nodo
+        if (raiz == null) {
+            return new Nodo(valor);
+        }// Si el valor a insertar es menor que el valor del nodo raíz, lo insertamos en el subárbol izquierdo
+        if (valor < raiz.valor) {
+            raiz.izquierdo = insertar(raiz.izquierdo, valor);
+        } else if (valor > raiz.valor) { // Si el valor a insertar es mayor que el valor del nodo raíz, lo insertamos en el subárbol derecho
+            raiz.derecho = insertar(raiz.derecho, valor);
+        }
         return raiz;
+    }
+    public static int imprimirNodosBST(Nodo raiz) {
+        if (raiz == null) {
+            return 0;
+        }
+        // Imprimimos el subárbol izquierdo, luego el nodo actual, y finalmente el subárbol derecho
+        imprimirNodosBST(raiz.izquierdo);
+        System.out.println("Nodo: " + raiz.valor);
+        imprimirNodosBST(raiz.derecho);
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -30,5 +47,7 @@ public class Ejercicio2_Binario {
         
         String izqIzq = (raiz.izquierdo != null && raiz.izquierdo.izquierdo != null) ? String.valueOf(raiz.izquierdo.izquierdo.valor) : "null";
         System.out.println("Hijo Izquierdo del 5 (Esperado 3): " + izqIzq);
+        System.out.println("--- Imprimir Nodos Inorden ---");
+        imprimirNodosBST(raiz);
     }
 }

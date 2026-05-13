@@ -16,11 +16,30 @@ class NodoN {
         this.hijos = hijos;
     }
 }
+    
 
 public class Ejercicio1_Basico {
     public static int contarNodos(NodoN raiz) {
-        // TODO: Implementa tu lógica aquí. (Pista: usa recursividad)
-        return 0; 
+        // Si el nodo es null, no contamos nada
+        if (raiz == null) {
+            return 0;
+        }// Contamos el nodo actual y luego contamos recursivamente los nodos de sus hijos
+        int count = 1; // Contamos el nodo actual
+        for (NodoN hijo : raiz.hijos) {
+            count += contarNodos(hijo);
+        }
+
+        return count;
+    }
+    public static int imprimirArbol(NodoN raiz) {
+        if (raiz == null) {
+            return 0;
+        }
+        System.out.println("Nodo: " + raiz.valor);
+        for (NodoN hijo : raiz.hijos) {
+            imprimirArbol(hijo);
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -40,5 +59,6 @@ public class Ejercicio1_Basico {
         System.out.println("--- Prueba Ejercicio 1 ---");
         System.out.println("Nodos esperados: 6");
         System.out.println("Nodos calculados: " + contarNodos(raiz));
+        imprimirArbol(raiz);
     }
 }

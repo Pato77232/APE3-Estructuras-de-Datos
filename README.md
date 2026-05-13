@@ -28,3 +28,37 @@ El repositorio contiene 5 ejercicios, cada uno debe ser hecho en c++ y java
 3. No es necesario modificar el método `main`. Este método ya contiene la construcción de un árbol de prueba y las impresiones necesarias para validar que su algoritmo funciona correctamente.
 4. Su objetivo es lograr que, al ejecutar el código, los resultados calculados coincidan con los resultados esperados impresos en la consola.
 
+
+
+## Resultados Guia Practica
+
+Ejercicio 1
+Java
+
+![alt text](image.png)
+C++
+![alt text](image-1.png)
+
+Ejercicio 2
+Java
+![alt text](image-2.png)
+C++
+![alt text](image-3.png)
+
+Ejercicio 3
+Java
+![alt text](image-4.png)
+C++
+![alt text](image-5.png)
+
+Ejercicio 4
+Java
+![alt text](image-6.png)
+C++
+![alt text](image-7.png)
+
+Ejercicio 5
+Java
+![alt text](image-8.png)
+C++
+![alt text](image-9.png)

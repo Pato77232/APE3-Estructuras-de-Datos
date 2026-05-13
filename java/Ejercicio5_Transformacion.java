@@ -1,6 +1,12 @@
 public class Ejercicio5_Transformacion {
     public static Nodo invertir(Nodo raiz) {
-        // TODO: Implementa tu lógica aquí
+        if (raiz == null) {
+            return null; // Si el nodo es null, no hay nada que invertir
+        }
+        // Intercambiamos los hijos izquierdo y derecho
+        Nodo temp = raiz.izquierdo;
+        raiz.izquierdo = raiz.derecho;
+        raiz.derecho = temp;
         return raiz;
     }
 
